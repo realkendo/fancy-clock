@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Fancy analog and digital clock using vanila.js</title>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+
+            <div class="circle" style="--clr:#0b0;" id="sc"><i></i></div>
+            <div class="circle circle2" style="--clr:#fee800;" id="mn"><i></i></div>
+            <div class="circle circle3" style="--clr:#f00;" id="hr"><i></i></div>
+            <div class="circlen"><i></i></div>
+            <div class="circlem"><i></i></div>
+
+            <span style="--i:1;"><b>i</b></span>
+            <span style="--i:2;"><b>ii</b></span>
+            <span style="--i:3;"><b style="font-size: x-large;">III</b></span>
+            <span style="--i:4;"><b>iv</b></span>
+            <span style="--i:5;"><b>v</b></span>
+            <span style="--i:6;"><b style="font-size: x-large;">VI</b></span>
+            <span style="--i:7;"><b>vii</b></span>
+            <span style="--i:8;"><b>viii</b></span>
+            <span style="--i:9;"><b style="font-size: x-large;">IX</b></span>
+            <span style="--i:10;"><b>x</b></span>
+            <span style="--i:11;"><b>xi</b></span>
+            <span style="--i:12;"><b style="font-size: x-large;">XII</b></span>
+        </div>
+        <!-- digital clock -->
+        <div id="time">
+            <div id="hour" style="--clr:#f00;">00</div>
+            <div id="minutes" style="--clr:#fee800;">00</div>
+            <div id="seconds" style="--clr:#0b0;">00</div>
+            <div id="ampm"> am</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

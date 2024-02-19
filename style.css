@@ -1,0 +1,207 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2f363e;
+}
+
+.container{
+    position: relative;
+    background-color: #2f363e;
+    /* min-height: 500px; */
+    border-radius: 18px;
+    border-top-left-radius: 225px;
+    border-top-right-radius: 225px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.75),
+    10px 10px 70px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock{
+    position: relative;
+    height: 450px;
+    width: 450px;
+    background-color: #2f363e;
+    border-radius: 50%;
+    box-shadow: 10px 50px 70px rgba(0,0,0,0.25),
+    inset 5px 5px 10px rgba(0,0,0,0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #2f363e;
+    border: 3px solid #000;
+    border-radius: 50%;
+    z-index: 100000;
+}
+
+.clock span{
+    position: absolute;
+    inset: 20px;
+    color: #fff;
+    text-align: center;
+    transform: rotate(calc(30deg*var(--i)));
+}
+
+.clock span b{
+    font-size: 1.8rem;
+    opacity: 0.6;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg*var(--i)));
+}
+
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+
+.circle i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background: var(--clr);
+    border-radius: 8px;
+    opacity: 0.8;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+}
+
+.circle:nth-child(1) i{
+    width: 2px;
+}
+
+.circle:nth-child(2) i {
+    width: 6px;
+}
+.circle2{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 9;
+}
+
+.circle3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 8;
+}
+
+.circlen{
+    position: absolute;
+    width: 399px;
+    height: 399px;
+    border: 6px dashed rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+
+}
+
+
+
+.circlem {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top:-8.5px;
+    background: var(--clr);
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+
+
+/* digital clock styles */
+
+#time{
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    border:2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0,0.5),
+    inset 5px 5px 20px rgb(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgb(0, 0, 0, 0.75)
+}
+
+#time div{
+    position: relative;
+    text-align: center;
+    width: 60px;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after{
+    content: ':';
+    position: absolute;
+    right: -4px;
+    color: #000;
+}
+
+#time div:last-child{
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#time div:nth-child(2)::after{
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+}
